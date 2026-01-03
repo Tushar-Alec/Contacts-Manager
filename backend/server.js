@@ -1,20 +1,18 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
+const connectDB = require("./config/db");
+
 const app = express();
 
+// middleware
 app.use(cors());
 app.use(express.json());
 
+// connect DB FIRST
+connectDB();
+
 // routes
 app.use("/api/contacts", require("./routes/contactRoutes"));
-
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error("Mongo error:", err));
-
-
 module.exports = app;

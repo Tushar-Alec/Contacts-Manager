@@ -12,7 +12,7 @@ function ContactList({ contacts, setContacts }) {
 
   
   const handleDelete = async (id) => {
-    await fetch(`${API}api/contacts/${id}`, {
+    await fetch(`${API}/api/contacts/${id}`, {
       method: "DELETE",
     });
 
@@ -28,7 +28,7 @@ function ContactList({ contacts, setContacts }) {
 
   
   const handleUpdate = async (id) => {
-    const res = await fetch(`${API}api/contacts/${id}`, {
+    const res = await fetch(`${API}/api/contacts/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editData),

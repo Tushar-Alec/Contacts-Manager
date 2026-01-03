@@ -1,0 +1,74 @@
+
+:root {
+  --accent: #FFC857;
+  --accent-light: #e0ecff;
+  --danger-soft: #FAF0CA;
+}
+.app-title {
+  color: var(--accent);
+  font-weight: 700;
+}
+.card {
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.card h5 {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.15rem rgba(59, 130, 246, 0.25);
+}
+
+
+.btn-primary {
+  background-color: #FFC857;
+  color: #263D42;
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+}
+
+.btn-primary:hover {
+  background-color: #f1b742;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-item {
+  border-left: 4px solid transparent;
+  padding-left: 12px;
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+  background-color: #f8fafc;
+  border-left-color: var(--accent);
+}
+
+
+.contact-item .btn {
+  transition: all 0.15s ease;
+}
+
+.contact-item .btn:hover {
+  transform: scale(1.05);
+}
+
+
+.contact-item .small {
+  color: #6b7280;
+}
+
+
+.text-muted {
+  font-style: italic;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 function ContactList({ contacts, setContacts }) {
   const [editingId, setEditingId] = useState(null);
@@ -11,7 +12,7 @@ function ContactList({ contacts, setContacts }) {
 
   
   const handleDelete = async (id) => {
-    await fetch(`http://localhost:5000/api/contacts/${id}`, {
+    await fetch(`${API}/api/contacts/${id}`, {
       method: "DELETE",
     });
 
@@ -27,7 +28,7 @@ function ContactList({ contacts, setContacts }) {
 
   
   const handleUpdate = async (id) => {
-    const res = await fetch(`http://localhost:5000/api/contacts/${id}`, {
+    const res = await fetch(`${API}/api/contacts/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(editData),

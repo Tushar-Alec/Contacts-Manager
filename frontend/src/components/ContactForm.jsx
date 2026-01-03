@@ -30,7 +30,7 @@ function ContactForm({ setContacts }) {
 
     setError("");
 
-    const res = await fetch(`${API}/api/contacts`, {
+    const res = await fetch(`${API}api/contacts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

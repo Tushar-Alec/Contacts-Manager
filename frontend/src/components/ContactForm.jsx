@@ -1,4 +1,5 @@
 import { useState } from "react";
+const API = import.meta.env.VITE_API_BASE_URL;
 
 function ContactForm({ setContacts }) {
   const [formData, setFormData] = useState({
@@ -29,11 +30,12 @@ function ContactForm({ setContacts }) {
 
     setError("");
 
-    const res = await fetch("http://localhost:5000/api/contacts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch(`${API}/api/contacts`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+});
+
 
     const newContact = await res.json();
 
